@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link href="/tailwind.css" rel="stylesheet">
+
+</head>
+
+<body id="app">
+
+
+
+<div class="text-center item-center">
+  <p class="text-8xl text-center pt-10 pb-16 font-serif">Photo gallery ({{numPic}})</p>
+  <ul class="space-y-5">
+    <li v-for="(pic,index) in pics" class="">
+      
+      <div class="flex items-center flex-col">
+        <img :src="pic.img" v-on:click=" heart(index)"
+        class="h-2/5 w-2/5 transform hover:scale-110
+        motion-reduce:transform-none duration-700 rounded flex items-center justify-center pb-5" />
+          
+        <div class="flex flex-rol items-center">
+          <p class="text-3xl font-serif uppercase">{{pic.named}}</p>
+            <i v-show="pic.done" class="material-icons text-red-500 text-5xl">
+              favorite
+            </i>
+        </div>
+
+      </div>
+
+    </li>
+  </ul>
+</div>
+<footer class="bg-white h-5"></footer>
+
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
